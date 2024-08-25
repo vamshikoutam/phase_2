@@ -1,0 +1,61 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>phase_end_projec</groupId>
+  <artifactId>phase_end_projec</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging> 
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>17</release>
+        </configuration>
+      </plugin>
+       <plugin>
+      <groupId>com.example</groupId>
+      <artifactId>my-custom-plugin</artifactId>
+      <version>1.0.0</version>
+      <executions>
+        <execution>
+          <id>pre-site-phase</id>
+          <phase>pre-site</phase>
+          <goals>
+            <goal>execute</goal>
+          </goals>
+        </execution>
+      </executions>
+      <configuration>
+        <!-- Custom configuration for the pre-site phase -->
+        <param1>value1</param1>
+        <param2>value2</param2>
+      </configuration>
+         
+    </plugin>
+     
+    </plugins>
+    
+  </build>
+  
+    <dependencies>
+	  <dependency>
+    <groupId>org.glassfish.web</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+    <version>2.0.0</version>
+</dependency>
+<dependency>
+    <groupId>jakarta.servlet.jsp</groupId>
+    <artifactId>jakarta.servlet.jsp-api</artifactId>
+    <version>2.3.5</version>
+    <scope>provided</scope>
+</dependency>
+ <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.30</version>
+</dependency>
+<!-- Add your custom plugin dependency -->
+    
+  </dependencies>
+</project>
